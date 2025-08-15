@@ -6,12 +6,12 @@ import { getAllMovie, getMovieSearch } from "../redux/actions/movieAction";
 
 const NavBar = () => {
   const dispatch = useDispatch();
-  // To Search In  Api
+
   const search = async (word) => {
     if (word === "") {
-      dispatch(getAllMovie())
+      dispatch(getAllMovie());
     } else {
-      dispatch(getMovieSearch(word))
+      dispatch(getMovieSearch(word));
     }
   };
 
@@ -25,17 +25,17 @@ const NavBar = () => {
         <Row className="pt-2">
           <Col xs="2" lg="1">
             <a href="/">
-              <img className="logo" src={logo} alt="Hello" />
+              <img className="logo" src={logo} alt="Movie App Logo" />
             </a>
           </Col>
-          <Col xs="2" lg="11" className="d-flex align-items-center w-calc">
+          <Col xs="10" lg="11" className="d-flex align-items-center">
             <div className="search w-100">
               <i className="fa fa-search"></i>
               <input
                 onChange={(e) => onSearch(e.target.value)}
                 type="text"
                 className="form-control"
-                placeholder="إبحث"
+                placeholder="Search..."
               />
             </div>
           </Col>
